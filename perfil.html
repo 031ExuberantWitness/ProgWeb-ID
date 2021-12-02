@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="css/banner.css">
 		<link rel="stylesheet" href="css/components.css">
 		<link rel="stylesheet" href="css/containers.css">
-		<link rel="stylesheet" href="css/login.css">
 		<link rel="stylesheet" href="css/footer.css">
     </head>
     <body>
@@ -21,7 +20,7 @@
             <div class="logo"><a href="index.html">Gobierno del Estado <span>Nayarit, Mexico</span></a></div>
 			<a href="#menu">Menu</a>
 		</header>
-
+        
 		<!-- Menu -->
 		<nav id="menu">
 			<ul class="links">
@@ -48,7 +47,7 @@
 			</ul>
 		</nav>
 
-        <!-- Banners -->
+        <!-- Contenido -->
 
         <section class="banner full">
             <article>
@@ -56,22 +55,29 @@
                 <div class="inner">
                     <header>
 
-						<div class="form">
-							<div class="form-toggle"></div>
-							<div class="form-panel one">
-								<div class="form-header">
-									<h1>Inicio de sesión</h1>
+						<div class="profile">
+							<div class="profile-toggle"></div>
+							<div class="profile-panel one">
+								<div class="profile-header">
+									<h1>Información del usuario</h1>
 								</div>
-								<div class="form-content">
-									<form action="loginIngresar.php" method="POST">
-										<div class="form-group"><label for="curp">CURP</label>
-											<input type="text" id="lCurp" name="lCurp" required="required" /></div>
-										<div class="form-group"><label for="clave">Contraseña</label>
-											<input type="password" id="lClave" name="lClave" required="required" /></div>
-										<div class="form-group">
-											<a class="form-recovery" href="registrar.html">Registrar CURP</a></div>
-										<div class="form-group">
-											<button type="submit" value="Ingresar" name="btnIngresar">Ingresar</button></div>
+								<div class="profile-content">
+									<form>
+										<div class="profile-group"><label for="curp">CURP</label><input type="text" id="username" name="username" required="required" /></div>
+                                        <hr>
+										<div class="profile-group"><label for="nombre">Nombre(s)</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <div class="profile-group"><label for="prApellido">Primer Apellido</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <div class="profile-group"><label for="seApellido">Segundo Apellido</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <hr>
+                                        <div class="profile-group"><label for="fechaNac">Fecha de Nacimiento</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <div class="profile-group"><label for="nac">Nacionalidad</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <div class="profile-group"><label for="nacLugar">Lugar de nacimiento</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <hr>
+                                        <div class="profile-group"><label for="telFijo">Télefono fijo (10 digitos)</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <div class="profile-group"><label for="telMovil">Télefono movil (10 digitos)</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <div class="profile-group"><label for="estCivil">Estado civil</label><input type="password" id="password" name="password" required="required" /></div>
+                                        <hr>
+										<div class="form-group"><button type="btnRegresar">Regresar</button></div>	
 									</form>
 								</div>
 							</div>
@@ -79,20 +85,7 @@
                     </header>
                 </div>
             </article>
-        </section> 
-
-        <!-- Pie de pagina -->
-
-        <footer id="footer">
-            <div class="inner">
-                <div class="copyright"> 
-                    H. XLII Ayuntamiento de Tepic, Derechos Reservados 2021 - 2024
-                    <a href="http://tepic.gob.mx/wp-content/uploads/2019/02/AVISO_DE_PRIVACIDAD_INTEGRAL_AYUNTAMIENTO_DE_TEPIC_Ver_1.1.pdf"><span> Aviso de Privacidad Integral, </span></a>
-                    <a href="http://tepic.gob.mx/wp-content/uploads/2019/02/AVISO_DE_PRIVACIDAD_SIMPLIFICADO_AYUNTAMIENTO_DE_TEPIC_Ver_1.1.pdf"><span> Aviso de Privacidad Simplificado, </span></a>
-                    <a href="http://tepic.gob.mx/transparencia/archivos/2018/03/1520545101_aviso_de_privacidad_simplificado_ayuntamiento_de_tepic.pdf"><span> Formato Derechos Arco</span></a>
-                </div>
-            </div>
-        </footer>
+        </section>  
 
         <!-- Scripts -->
 		<script src="js\jquery.min.js"></script>
@@ -101,6 +94,6 @@
 		<script src="js\util.js"></script>
 		<script src="js\main.js"></script>
 		<script src="js\login.js"></script>
-		
+
     </body>
 </html>

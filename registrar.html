@@ -55,23 +55,24 @@
                 <img src="images/landscape.jpg"/>
                 <div class="inner">
                     <header>
-
 						<div class="form">
 							<div class="form-toggle"></div>
 							<div class="form-panel one">
 								<div class="form-header">
-									<h1>Inicio de sesión</h1>
+									<h1>Registrar CURP</h1>
 								</div>
 								<div class="form-content">
-									<form action="loginIngresar.php" method="POST">
+									<form action="loginRegistrar.php" method="POST">
 										<div class="form-group"><label for="curp">CURP</label>
-											<input type="text" id="lCurp" name="lCurp" required="required" /></div>
+											<input type="text" id="rCurp" name="rCurp" required="required" /></div>
 										<div class="form-group"><label for="clave">Contraseña</label>
-											<input type="password" id="lClave" name="lClave" required="required" /></div>
+											<input type="password" id="rClave" name="rClave" required="required" /></div>
+										<div class="form-group"><label for="cclave">Confirmar la contraseña</label>
+											<input type="password" id="rCClave" name="rCClave" required="required" /></div>
+										<div class="form-group"><label for="email">Correo electrónico</label>
+											<input type="email" id="rCorreo" name="rCorreo" required="required" /></div>
 										<div class="form-group">
-											<a class="form-recovery" href="registrar.html">Registrar CURP</a></div>
-										<div class="form-group">
-											<button type="submit" value="Ingresar" name="btnIngresar">Ingresar</button></div>
+											<button type="submit" value="Registrar" name="btnRegistrar">Registrar</button></div>
 									</form>
 								</div>
 							</div>
