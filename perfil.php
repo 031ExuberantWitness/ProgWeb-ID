@@ -16,6 +16,7 @@
     $telFijo = "";
     $telMob = "";
     $estCivil = "";
+	$imagen = "";
 
     while($row = mysqli_fetch_array($infoCurp)){
         $nombre = $row["nombre"];
@@ -26,7 +27,33 @@
         $lugNac = $row["lugNaci"];
         $telFijo = $row["telFijo"];
         $telMob = $row["telMovil"];
-        $estCivil = $row["estCivil"];  
+        $estCivil = $row["estCivil"]; 
+		$imagen = $row["imagen"];  
+    }
+
+	$infoCurp = mysqli_query($conn,"SELECT * from informaciondomiciliaria where curp = '$curpS'");
+
+    $curp = $curpS;
+    $codigoPostal  = "";
+    $estado        = "";
+    $municipio     = "";
+    $colonia     = "";
+    $localidad       = "";
+    $calle         = "";
+    $numExterior   = "";
+    $numInterior   = "";
+    $descripcion   = "";
+
+    while($row = mysqli_fetch_array($infoCurp)){
+        $codigoPostal = $row["codigoPostal"];
+        $estado = $row["estado"];
+        $municipio = $row["municipio"];
+        $colonia = $row["colonia"];
+        $localidad = $row["localidad"];
+        $calle = $row["calle"];
+        $numExterior = $row["numExterior"];
+        $numInterior = $row["numInterior"];
+        $descripcion = $row["descripcion"];  
     }
     
 ?>
@@ -39,12 +66,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- Hojas de css-->
-		<link rel="stylesheet" href="css/homepage.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/header.css">
 		<link rel="stylesheet" href="css/banner.css">
+		<link rel="stylesheet" href="css/virtual.css">
 		<link rel="stylesheet" href="css/components.css">
-		<link rel="stylesheet" href="css/containers.css">
 		<link rel="stylesheet" href="css/footer.css">
+		
+
     </head>
     <body>
 
@@ -81,59 +110,178 @@
 		</nav>
 
         <!-- Contenido -->
-
-        <section class="banner full">
+		<section class="banner full">
             <article>
-                <img src="images/landscape.jpg"/>
+                <img src=""/>
                 <div class="inner">
                     <header>
-
-						<div class="profile">
-							<div class="profile-toggle"></div>
-							<div class="profile-panel one">
-								<div class="profile-header">
-									<h1>Información del usuario</h1>
-								</div>
-								<div class="profile-content">
-									<form action="php/actualizarPefil.php" method="POST">
-										<div class="profile-group"><label for="curp">CURP</label>
-											<input type="text" id="curp" name="curp" required="required" value="<?php echo $curp;?>"/></div>
-                                        <hr>
-										<div class="profile-group"><label for="nombre">Nombre(s)</label>
-											<input type="text" id="nombre" name="nombre" required="required" value="<?php echo $nombre;?>"/></div>
-                                        <div class="profile-group"><label for="apePaterno">Primer Apellido</label>
-											<input type="text" id="apePaterno" name="apePaterno" required="required" value="<?php echo $apePaterno;?>"/></div>
-                                        <div class="profile-group"><label for="apeMaterno">Segundo Apellido</label>
-											<input type="text" id="apeMaterno" name="apeMaterno" required="required" value="<?php echo $apeMaterno;?>"/></div>
-                                        <hr>
-                                        <div class="profile-group"><label for="fechaNac">Fecha de Nacimiento</label>
-											<input type="text" id="fechaNac" name="fechaNac" required="required" value="<?php echo $fecNac;?>"/></div>
-                                        <div class="profile-group"><label for="nac">Nacionalidad</label>
-											<input type="text" id="nac" name="nac" required="required" value="<?php echo $Nac;?>"/></div>
-                                        <div class="profile-group"><label for="nacLugar">Lugar de nacimiento</label>
-											<input type="text" id="nacLugar" name="nacLugar" required="required" value="<?php echo $lugNac;?>"/></div>
-                                        <hr>
-                                        <div class="profile-group"><label for="telFijo">Télefono fijo (10 digitos)</label>
-											<input type="text" id="telFijo" name="telFijo" required="required" value="<?php echo $telFijo;?>"/></div>
-                                        <div class="profile-group"><label for="telMovil">Télefono movil (10 digitos)</label>
-											<input type="text" id="telMovil" name="telMovil" required="required" value="<?php echo $telMob;?>"/></div>
-                                        <div class="profile-group"><label for="estCivil">Estado civil</label>
-											<input type="text" id="estCivil" name="estCivil" required="required" value="<?php echo $estCivil;?>"/></div>
-                                        <hr>
-										<div class="form-group"><button type="btnRegresar">Actualizar / Modificar</button></div>	
-									</form>
-                                    <form action="php/eliminarPerfil.php" method="POST">
-											<input type="hidden" id="curp" name="curp" required="required" value="<?php echo $curp;?>"/></div>
-                                        <hr>
-                                    <div class="form-group"><button type="btnBorrar">Borrar</button></div>	
-                                    </form>
-								</div>
-							</div>
-						</div>
-                    </header>
+						<header>
+							<p>LA INFORMACIÓN ESTA SUJETA A UN CONTRATO DE PRIVACIDAD</a></p>
+							<br>
+							<h2>INFORMACIÓN PERSONAL</h2>
+						</header>
+		            </header>
                 </div>
             </article>
         </section>  
+						
+		<div class="vg-page page-about" id="about">
+			<div class="container py-5">
+				<div class="row">
+					<div class="col-lg-4 py-3">
+						<div class="img-place wow fadeInUp">
+							<img src="<?php echo $imagen;?>" alt="">
+						</div>
+						<br>
+					</div>
+					<div class="col-lg-6 offset-lg-1 wow fadeInRight">
+						<h1 class="fw-light"><?php echo $nombre; $apePaterno; $apeMaterno;?></h1>
+						<h5 class="fg-theme mb-3"><?php echo $curp;?></h5>
+						<ul class="theme-list">
+							<li><b>Fecha Nacimiento:</b> <?php echo $fecNac;?></li>
+							<li><b>Nacionalidad:</b> <?php echo $Nac;?></li>
+							<li><b>Lugar de Nacimiento:</b> <?php echo $lugNac;?></li>
+							<li><br></li>
+							<li><b>Télefono fijo (10 digitos):</b> <?php echo $telFijo;?></li>
+							<li><b>Télefono movil (10 digitos):</b> <?php echo $telMob;?></li>
+							<li><b>Estado Civil:</b> <?php echo $estCivil;?></li>
+						</ul>
+						<button class="btn btn-theme-outline" onclick="window.location.href='perfilInformacion.php'">Editar</button>
+					</div>
+				</div>
+		</div>
+
+		<div class="container pt-5">
+			<div class="row">
+				<div class="col-md-6 wow fadeInRight">
+					<h2 class="fw-normal">Información domiciliaria</h2>
+					<ul class="timeline mt-4 pr-md-5">
+						<li>
+							<div class="title">Geografica</div>
+							<div class="details">
+								<h5>Codigo postal</h5>
+								<p><?php echo $codigoPostal;?></p>
+								<br>
+								<h5>Estado</h5>
+								<p><?php echo $estado;?></p>
+								<br>
+								<h5>Municipio</h5>
+								<p><?php echo $municipio;?></p>
+								<br>
+								<h5>Localidad</h5>
+								<p><?php echo $localidad;?></p>
+							</div>
+						</li>
+						<li>
+							<div class="title">Domiciliaria</div>
+							<div class="details">
+								<h5>Colonia</h5>
+								<p><?php echo $colonia;?></p>
+								<br>
+								<h5>Calle</h5>
+								<p><?php echo $calle;?></p>
+								<br>
+								<h5>Número exterior</h5>
+								<p><?php echo $numExterior;?></p>
+								<br>
+								<h5>Número interior</h5>
+								<p><?php echo $numInterior;?></p>
+							</div>
+						</li>
+						<li>
+							<div class="title">Descripción</div>
+							<div class="details">
+								<h5>Detalles de la ubicación residente actual</h5>
+								<p><?php echo $descripcion;?></p>
+							</div>
+						</li>
+						<button class="btn btn-theme-outline" onclick="window.location.href='perfilDomiciliaria.php'">Editar</button>
+					</ul>
+				</div>
+				<div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
+					<h2 class="fw-normal">Información educacional</h2>
+					<ul class="timeline mt-4 pr-md-5">
+						<li>
+							<div class="title">Estado actual</div>
+							<div class="details">
+								<h5>¿Estudia?</h5>
+								<p>Si</p>
+								<br>
+								<h5>Nivel actual cursando</h5>
+								<p>Preparatoria</p>
+								<br>
+								<h5>Nivel maximo de estudios</h5>
+								<p>Secundaria</p>
+								<br>
+								<h5>¿Esta becado?</h5>
+								<p>Si</p>
+							</div>
+						</li>
+						<li>
+							<div class="title">Nivel en curso</div>
+							<div class="details">
+								<h5>Periodo</h5>
+								<p>2021 (Julio - Diciembre)</p>
+								<br>
+								<h5>Institución</h5>
+								<p>ITTEPIC</p>
+								<br>
+								<h5>Planel</h5>
+								<p>ITTEPIC</p>
+								<br>
+								<h5>Carrera</h5>
+								<p>No aplica</p>
+								<br>
+								<h5>Grado académico</h5>
+								<p>Licenciatura</p>
+								<br>
+								<h5>Estatus</h5>
+								<p>Licenciatura</p>
+							</div>
+						</li>
+						<li>
+							<div class="title">Historial academico</div>
+							<div class="details">
+								<h5>Kinder</h5>
+								<p>No aplica</p>
+								<br>
+								<h5>Escuela primaria</h5>
+								<p>No aplica</p>
+								<br>
+								<h5>Escuela segundaria</h5>
+								<p>No aplica</p>
+								<br>
+								<h5>Preparatoria</h5>
+								<p>No aplica</p>
+								<br>
+								<h5>Universidad</h5>
+								<p>No aplica</p>
+								<br>
+								<h5>Maestria</h5>
+								<p>No aplica</p>
+								<br>
+								<h5>Doctorado</h5>
+								<p>No aplica</p>
+							</div>
+						</li>
+						<button class="btn btn-theme-outline" onclick="window.location.href='index.php'">Editar</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<!-- Pie de pagina -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="copyright"> 
+					H. XLII Ayuntamiento de Tepic, Derechos Reservados 2021 - 2024
+					<a href="http://tepic.gob.mx/wp-content/uploads/2019/02/AVISO_DE_PRIVACIDAD_INTEGRAL_AYUNTAMIENTO_DE_TEPIC_Ver_1.1.pdf"><span> Aviso de Privacidad Integral, </span></a>
+					<a href="http://tepic.gob.mx/wp-content/uploads/2019/02/AVISO_DE_PRIVACIDAD_SIMPLIFICADO_AYUNTAMIENTO_DE_TEPIC_Ver_1.1.pdf"><span> Aviso de Privacidad Simplificado, </span></a>
+					<a href="http://tepic.gob.mx/transparencia/archivos/2018/03/1520545101_aviso_de_privacidad_simplificado_ayuntamiento_de_tepic.pdf"><span> Formato Derechos Arco</span></a>
+				</div>
+			</div>
+		</footer>
 
         <!-- Scripts -->
 		<script src="js\jquery.min.js"></script>
@@ -142,6 +290,5 @@
 		<script src="js\util.js"></script>
 		<script src="js\main.js"></script>
 		<script src="js\login.js"></script>
-
     </body>
 </html>

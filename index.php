@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- Hojas de css-->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="css/homepage.css">
 		<link rel="stylesheet" href="css/components.css">
 		<link rel="stylesheet" href="css/header.css">

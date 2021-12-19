@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- Hojas de css-->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="css/homepage.css">
 		<link rel="stylesheet" href="css/header.css">
 		<link rel="stylesheet" href="css/banner.css">
@@ -69,7 +70,7 @@
 										<div class="form-group"><label for="clave">Contraseña</label>
 											<input type="password" id="lClave" name="lClave" required="required" /></div>
 										<div class="form-group">
-											<a class="form-recovery" href="registrar.php">Registrar CURP</a></div>
+											<a class="form-recovery" href="loginRegistrar.php">Registrar CURP</a></div>
 										<div class="form-group">
 											<button type="submit" value="Ingresar" name="btnIngresar">Ingresar</button></div>
 									</form>
