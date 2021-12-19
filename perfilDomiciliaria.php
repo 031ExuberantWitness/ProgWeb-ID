@@ -33,7 +33,7 @@
 
 <html lang="en">
     <head>
-		<title>Login</title>
+		<title>Editar información</title>
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compat" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

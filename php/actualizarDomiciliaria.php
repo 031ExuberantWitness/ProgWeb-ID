@@ -18,7 +18,7 @@
                 colonia = '".$_POST['colonia']."', 
                 localidad = '".$_POST['localidad']."', 
                 calle = '".$_POST['calle']."', 
-                NumExterior = '".$_POST['NumExterior']."', 
+                NumExterior = '".$_POST['numExterior']."', 
                 numInterior = '".$_POST['numInterior']."', 
                 descripcion = '".$_POST['descripcion']."'
             WHERE curp = '".$_POST['curp']."'");
@@ -35,10 +35,9 @@
             '".$_POST['colonia']."', 
             '".$_POST['localidad']."', 
             '".$_POST['calle']."', 
-            '".$_POST['NumExterior']."', 
+            '".$_POST['numExterior']."', 
             '".$_POST['numInterior']."', 
             '".$_POST['descripcion']."')");
 
         echo "<script> window.location = '../perfil.php' </script>";
     }
-?>

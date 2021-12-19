@@ -56,11 +56,51 @@
         $descripcion = $row["descripcion"];  
     }
     
+	$infoCurp = mysqli_query($conn,"SELECT * from informacionescolar where curp = '$curpS'");
+
+    $curp = $curpS;
+	$estudia = "";
+	$nivelActual = "";
+	$nivelMax = "";
+	$estaBecado = "";
+	$periodo = "";
+	$institucion = "";
+	$plantel = "";
+	$carrera = "";
+	$gradoAcademico = "";
+	$estatus = "";
+	$kinder = "";
+	$escPrimaria = "";
+	$escSecundaria = "";
+	$preparatoria = "";
+	$universidad = "";
+	$maestria = "";
+	$doctorado = "";
+
+    while($row = mysqli_fetch_array($infoCurp)){
+		$estudia  = $row["estudia"];
+		$nivelActual  = $row["nivelActual"];
+		$nivelMax  = $row["nivelMax"];
+		$estaBecado  = $row["estaBecado"];
+		$periodo  = $row["periodo"];
+		$institucion  = $row["institucion"];
+		$plantel  = $row["plantel"];
+		$carrera  = $row["carrera"];
+		$gradoAcademico  = $row["gradoAcademico"];
+		$estatus  = $row["estatus"];
+		$kinder  = $row["kinder"];
+		$escPrimaria  = $row["escPrimaria"];
+		$escSecundaria  = $row["escSecundaria"];
+		$preparatoria  = $row["preparatoria"];
+		$universidad  = $row["universidad"];
+		$maestria  = $row["maestria"];
+		$doctorado  = $row["doctorado"];
+    }
 ?>
 
 <html lang="en">
     <head>
-		<title>Login</title>
+		<title>Perfil</title>
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compat" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -130,7 +170,7 @@
 				<div class="row">
 					<div class="col-lg-4 py-3">
 						<div class="img-place wow fadeInUp">
-							<img src="<?php echo $imagen;?>" alt="">
+							<img src="images/np.png" alt="">
 						</div>
 						<br>
 					</div>
@@ -205,66 +245,66 @@
 							<div class="title">Estado actual</div>
 							<div class="details">
 								<h5>¿Estudia?</h5>
-								<p>Si</p>
+								<p><?php echo $estudia;?></p>
 								<br>
 								<h5>Nivel actual cursando</h5>
-								<p>Preparatoria</p>
+								<p><?php echo $nivelActual;?></p>
 								<br>
 								<h5>Nivel maximo de estudios</h5>
-								<p>Secundaria</p>
+								<p><?php echo $nivelMax;?></p>
 								<br>
 								<h5>¿Esta becado?</h5>
-								<p>Si</p>
+								<p><?php echo $estaBecado;?></p>
 							</div>
 						</li>
 						<li>
 							<div class="title">Nivel en curso</div>
 							<div class="details">
 								<h5>Periodo</h5>
-								<p>2021 (Julio - Diciembre)</p>
+								<p><?php echo $periodo;?></p>
 								<br>
 								<h5>Institución</h5>
-								<p>ITTEPIC</p>
+								<p><?php echo $institucion;?></p>
 								<br>
 								<h5>Planel</h5>
-								<p>ITTEPIC</p>
+								<p><?php echo $plantel;?></p>
 								<br>
 								<h5>Carrera</h5>
-								<p>No aplica</p>
+								<p><?php echo $carrera;?></p>
 								<br>
 								<h5>Grado académico</h5>
-								<p>Licenciatura</p>
+								<p><?php echo $gradoAcademico;?></p>
 								<br>
 								<h5>Estatus</h5>
-								<p>Licenciatura</p>
+								<p><?php echo $estatus;?></p>
 							</div>
 						</li>
 						<li>
 							<div class="title">Historial academico</div>
 							<div class="details">
 								<h5>Kinder</h5>
-								<p>No aplica</p>
+								<p><?php echo $kinder;?></p>
 								<br>
 								<h5>Escuela primaria</h5>
-								<p>No aplica</p>
+								<p><?php echo $escPrimaria;?></p>
 								<br>
 								<h5>Escuela segundaria</h5>
-								<p>No aplica</p>
+								<p><?php echo $escSecundaria;?></p>
 								<br>
 								<h5>Preparatoria</h5>
-								<p>No aplica</p>
+								<p><?php echo $preparatoria;?></p>
 								<br>
 								<h5>Universidad</h5>
-								<p>No aplica</p>
+								<p><?php echo $universidad;?></p>
 								<br>
 								<h5>Maestria</h5>
-								<p>No aplica</p>
+								<p><?php echo $maestria;?></p>
 								<br>
 								<h5>Doctorado</h5>
-								<p>No aplica</p>
+								<p><?php echo $doctorado;?></p>
 							</div>
 						</li>
-						<button class="btn btn-theme-outline" onclick="window.location.href='index.php'">Editar</button>
+						<button class="btn btn-theme-outline" onclick="window.location.href='perfilEducacional.php'">Editar</button>
 					</ul>
 				</div>
 			</div>

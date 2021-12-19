@@ -7,33 +7,48 @@
     $infoCurp = mysqli_query($conn,"SELECT * from informacionescolar where curp = '$curpS'");
 
     $curp = $curpS;
-    $codigoPostal  = "";
-    $estado        = "";
-    $municipio     = "";
-    $colonia     = "";
-    $localidad       = "";
-    $calle         = "";
-    $numExterior   = "";
-    $numInterior   = "";
-    $descripcion   = "";
+	$estudia = "";
+	$nivelActual = "";
+	$nivelMax = "";
+	$estaBecado = "";
+	$periodo = "";
+	$institucion = "";
+	$plantel = "";
+	$carrera = "";
+	$gradoAcademico = "";
+	$estatus = "";
+	$kinder = "";
+	$escPrimaria = "";
+	$escSecundaria = "";
+	$preparatoria = "";
+	$universidad = "";
+	$maestria = "";
+	$doctorado = "";
 
     while($row = mysqli_fetch_array($infoCurp)){
-        $codigoPostal = $row["codigoPostal"];
-        $estado = $row["estado"];
-        $municipio = $row["municipio"];
-        $colonia = $row["colonia"];
-        $localidad = $row["localidad"];
-        $calle = $row["calle"];
-        $numExterior = $row["numExterior"];
-        $numInterior = $row["numInterior"];
-        $descripcion = $row["descripcion"];  
+		$estudia  = $row["estudia"];
+		$nivelActual  = $row["nivelActual"];
+		$nivelMax  = $row["nivelMax"];
+		$estaBecado  = $row["estaBecado"];
+		$periodo  = $row["periodo"];
+		$institucion  = $row["institucion"];
+		$plantel  = $row["plantel"];
+		$carrera  = $row["carrera"];
+		$gradoAcademico  = $row["gradoAcademico"];
+		$estatus  = $row["estatus"];
+		$kinder  = $row["kinder"];
+		$escPrimaria  = $row["escPrimaria"];
+		$escSecundaria  = $row["escSecundaria"];
+		$preparatoria  = $row["preparatoria"];
+		$universidad  = $row["universidad"];
+		$maestria  = $row["maestria"];
+		$doctorado  = $row["doctorado"];
     }
-    
 ?>
 
 <html lang="en">
     <head>
-		<title>Login</title>
+		<title>Editar información</title>
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compat" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -96,31 +111,49 @@
 									<h1>Información del usuario</h1>
 								</div>
 								<div class="profile-content">
-									<form action="php/actualizarDomiciliaria.php" method="POST">
+									<form action="php/actualizarEducacional.php" method="POST">
 										<div class="profile-group"><label for="curp">CURP</label>
 											<input type="text" id="curp" name="curp" required="required" value="<?php echo $curp;?>"/></div>
                                         <hr>
-										<div class="profile-group"><label for="codigoPostal">Codigo postal</label>
-											<input type="text" id="nombre" name="codigoPostal" required="required" value="<?php echo $codigoPostal;?>"/></div>
-                                        <div class="profile-group"><label for="estado">Estado</label>
-											<input type="text" id="apePaterno" name="estado" required="required" value="<?php echo $estado;?>"/></div>
-                                        <div class="profile-group"><label for="municipio">Municipio</label>
-											<input type="text" id="apeMaterno" name="municipio" required="required" value="<?php echo $municipio;?>"/></div>
-                                        <div class="profile-group"><label for="localidad">Localidad</label>
-											<input type="text" id="apeMaterno" name="localidad" required="required" value="<?php echo $localidad;?>"/></div>
+										<div class="profile-group"><label for="estudia">Estudia</label>
+											<input type="text" id="nombre" name="estudia" required="required" value="<?php echo $estudia;?>"/></div>
                                         <hr>
-                                        <div class="profile-group"><label for="colonia">Colonia</label>
-											<input type="text" id="fechaNac" name="colonia" required="required" value="<?php echo $colonia;?>"/></div>
-                                        <div class="profile-group"><label for="calle">Calle</label>
-											<input type="text" id="nac" name="calle" required="required" value="<?php echo $calle;?>"/></div>
-                                        <div class="profile-group"><label for="numExterior">Número exterior</label>
-											<input type="text" id="nacLugar" name="numExterior" required="required" value="<?php echo $numExterior;?>"/></div>
-                                        <div class="profile-group"><label for="numInterior">Número interior</label>
-											<input type="text" id="telFijo" name="numInterior" required="required" value="<?php echo $numInterior;?>"/></div>
-                                        <hr>    
-                                            <div class="profile-group"><label for="descripcion">descripción</label>
-											<input type="text" id="telMovil" name="descripcion" required="required" value="<?php echo $descripcion;?>"/></div>
+										<div class="profile-group"><label for="nivelActual">Nivel actual cursando</label>
+											<input type="text" id="apePaterno" name="nivelActual" required="required" value="<?php echo $nivelActual;?>"/></div>
+                                        <div class="profile-group"><label for="nivelMax">Nivel maximo actual</label>
+											<input type="text" id="apeMaterno" name="nivelMax" required="required" value="<?php echo $nivelMax;?>"/></div>
+										<hr>
+										<div class="profile-group"><label for="estaBecado">¿Esta becado?</label>
+											<input type="text" id="apeMaterno" name="estaBecado" required="required" value="<?php echo $estaBecado;?>"/></div>
                                         <hr>
+                                        <div class="profile-group"><label for="periodo">Periodo</label>
+											<input type="text" id="fechaNac" name="periodo" required="required" value="<?php echo $institucion;?>"/></div>
+										<div class="profile-group"><label for="institucion">Institución</label>
+											<input type="text" id="fechaNac" name="institucion" required="required" value="<?php echo $institucion;?>"/></div>
+                                        <div class="profile-group"><label for="plantel">Plantel</label>
+											<input type="text" id="nac" name="plantel" required="required" value="<?php echo $plantel;?>"/></div>
+                                        <div class="profile-group"><label for="carrera">Carrera</label>
+											<input type="text" id="nacLugar" name="carrera" required="required" value="<?php echo $carrera;?>"/></div>
+                                        <div class="profile-group"><label for="gradoAcademico">Grado Academico</label>
+											<input type="text" id="telFijo" name="gradoAcademico" required="required" value="<?php echo $gradoAcademico;?>"/></div>
+                                        <div class="profile-group"><label for="estatus">Estatus</label>
+											<input type="text" id="telMovil" name="estatus" required="required" value="<?php echo $estatus;?>"/></div>
+                                        <hr>
+                                        <div class="profile-group"><label for="kinder">Kinder</label>
+											<input type="text" id="fechaNac" name="kinder" required="required" value="<?php echo $kinder;?>"/></div>
+                                        <div class="profile-group"><label for="escPrimaria">Escuela Primaria</label>
+											<input type="text" id="nac" name="escPrimaria" required="required" value="<?php echo $escPrimaria;?>"/></div>
+                                        <div class="profile-group"><label for="escSecundaria">Escuela Secundaria</label>
+											<input type="text" id="nacLugar" name="escSecundaria" required="required" value="<?php echo $escSecundaria;?>"/></div>
+                                        <div class="profile-group"><label for="preparatoria">Preparatoria</label>
+											<input type="text" id="telFijo" name="preparatoria" required="required" value="<?php echo $preparatoria;?>"/></div>
+                                        <div class="profile-group"><label for="universidad">Universidad</label>
+											<input type="text" id="telMovil" name="universidad" required="required" value="<?php echo $universidad;?>"/></div>
+										<div class="profile-group"><label for="maestria">Maestria</label>
+											<input type="text" id="telMovil" name="maestria" required="required" value="<?php echo $maestria;?>"/></div>
+										<div class="profile-group"><label for="doctorado">Doctorado</label>
+											<input type="text" id="telMovil" name="doctorado" required="required" value="<?php echo $doctorado;?>"/></div>
+										<hr>
 										<div class="form-group"><button type="btnRegresar">Actualizar / Modificar</button></div>	
 									</form>
 								</div>
